@@ -252,10 +252,18 @@
             </p>
           </div>
 
-          <div v-else-if="imageUrl" class="sa-atelier-image-container">
+          <div v-else-if="imageUrl && !imageError" class="sa-atelier-image-container">
             <div class="sa-atelier-image-card">
               <div class="sa-atelier-image-wrapper">
-                <img :src="imageUrl" alt="Generated Perfume Bottle" class="sa-atelier-image" />
+                <img 
+                  v-if="!imageError"
+                  :src="imageUrl" 
+                  alt="Generated Perfume Bottle" 
+                  class="sa-atelier-image"
+                  loading="lazy"
+                  @error="handleImageError"
+                  @load="handleImageLoad"
+                />
                 <div class="sa-atelier-date-watermark">
                   <span class="sa-atelier-watermark-date">{{ formatDateWatermark() }}</span>
                   <span class="sa-atelier-watermark-signature">Le Nez</span>
@@ -777,6 +785,21 @@ onUpdated(() => {
   forceDarkModeStyles();
 });
 
+// 图片加载处理
+const imageLoading = ref(false);
+const imageError = ref(false);
+
+const handleImageLoad = () => {
+  imageLoading.value = false;
+  imageError.value = false;
+};
+
+const handleImageError = () => {
+  imageLoading.value = false;
+  imageError.value = true;
+  console.error("图片加载失败");
+};
+
 const handleGenerate = async () => {
   if (!recipeName.value.trim() || !scentKeywords.value.trim()) {
     return;
@@ -785,6 +808,8 @@ const handleGenerate = async () => {
   loading.value = true;
   imageUrl.value = null;
   perfumeNotes.value = null;
+  imageLoading.value = true;
+  imageError.value = false;
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/draw_bottle`, {
@@ -806,6 +831,8 @@ const handleGenerate = async () => {
 
     const data = await response.json();
     imageUrl.value = data.image_url;
+    imageLoading.value = true;
+    imageError.value = false;
     
     // 保存前中后调信息
     if (data.notes) {
@@ -818,6 +845,8 @@ const handleGenerate = async () => {
     await loadRecipes();
   } catch (error) {
     console.error("生成图片失败:", error);
+    imageError.value = true;
+    imageLoading.value = false;
     alert(
       locale.value === "zh"
         ? `生成失败: ${error instanceof Error ? error.message : "未知错误"}`
@@ -1750,29 +1779,76 @@ html.dark textarea[data-dark-placeholder]:-ms-input-placeholder {
 
 @media (max-width: 768px) {
   .sa-atelier-root {
-    padding: 1rem 0 !important; /* 减少顶部和底部间距 */
+    padding: 0.5rem 0 !important; /* 最小化顶部和底部间距 */
   }
 
   .sa-atelier-container {
-    padding: 0 0.75rem !important; /* 减少左右边距 */
-    gap: 1.2rem;
+    padding: 0 !important; /* 完全移除左右边距 */
+    gap: 1rem;
+    flex-direction: column;
+    margin: 0;
   }
 
-  .sa-atelier-form-panel,
+  .sa-atelier-form-panel {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 1rem 0.75rem !important; /* 大幅减少内边距 */
+    margin: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    border-radius: 0 !important;
+  }
+
   .sa-atelier-display-panel {
-    padding: 1.2rem 1rem !important; /* 减少内边距 */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 1rem 0.75rem !important; /* 与表单面板一致 */
+    margin: 0 !important;
+    border-radius: 0 !important;
   }
 
   .sa-atelier-frame {
     min-height: 300px;
+    width: 100% !important;
+  }
+
+  .sa-atelier-image-container {
+    width: 100% !important;
+    padding: 0.5rem !important;
+  }
+
+  .sa-atelier-image-card {
+    width: 100% !important;
+    gap: 1rem !important;
+  }
+
+  .sa-atelier-image-wrapper {
+    width: 100% !important;
+  }
+
+  .sa-atelier-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .sa-atelier-sketch-notes {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
   }
 
   /* 优化文字显示 */
   .sa-atelier-title {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     font-weight: 500 !important;
+    margin: 0 0 0.5rem 0 !important;
   }
 
   .sa-atelier-subtitle {

@@ -1235,25 +1235,48 @@ const handleSubmit = async () => {
 
 @media (max-width: 768px) {
   .sa-chat-root {
-    padding: 1rem 0 !important; /* 减少顶部和底部间距 */
+    padding: 0.5rem 0 !important; /* 最小化顶部和底部间距 */
   }
 
   .sa-chat-shell {
     margin-inline: 0 !important; /* 移除负边距，使用全宽 */
-    border-radius: 0;
-    padding: 1.2rem 1rem !important; /* 减少内边距 */
+    border-radius: 0 !important;
+    padding: 1rem 0.75rem !important; /* 大幅减少内边距 */
     max-width: 100% !important;
     width: 100% !important;
+    margin: 0 !important;
   }
 
   .sa-main-wrapper {
-    padding: 0 !important; /* 移除左右边距 */
+    padding: 0 !important; /* 完全移除左右边距 */
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .sa-main-wrapper:not(.sa-main-wrapper--with-memo) {
+    padding: 0 !important;
+  }
+
+  .sa-main-wrapper:not(.sa-main-wrapper--with-memo) .sa-chat-shell {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 有手札时也要全宽 */
+  .sa-main-wrapper--with-memo .sa-chat-shell {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem 0.75rem !important;
   }
 
   .sa-chat-header {
     flex-direction: column;
     align-items: stretch;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    padding: 0;
   }
 
   .sa-chat-controls {
@@ -1263,17 +1286,20 @@ const handleSubmit = async () => {
   .sa-chat-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.5rem;
   }
 
   .sa-chat-hint {
     order: 2;
     font-size: 0.75rem;
     line-height: 1.5;
+    margin: 0;
   }
 
   .sa-chat-submit {
-    align-self: flex-end;
+    align-self: stretch;
     order: 1;
+    width: 100% !important;
   }
 
   .sa-chat-content-wrapper {
@@ -1287,20 +1313,40 @@ const handleSubmit = async () => {
     font-weight: 400 !important;
   }
 
+  .sa-chat-input-row {
+    padding: 0.4rem 0.5rem !important;
+    margin: 0;
+  }
+
   .sa-chat-input {
     font-size: 15px !important;
     font-weight: 400 !important;
+    padding: 0.5rem !important;
   }
 
   /* 优化标题 */
   .sa-chat-title {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
     font-weight: 500 !important;
+    margin: 0;
   }
 
   .sa-chat-subtitle {
     font-size: 0.85rem !important;
     line-height: 1.6 !important;
+    margin: 0.5rem 0 0 0;
+  }
+
+  /* 优化手札面板 */
+  .sa-memo-panel {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 1rem 0.75rem !important;
+    margin: 0.5rem 0 0 0 !important;
+    position: relative !important;
+    top: 0 !important;
   }
 }
 

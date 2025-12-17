@@ -512,19 +512,21 @@ h2, h3, h4, h5, h6 {
     font-weight: 400; /* 确保正文使用正常字重 */
   }
 
-  /* 优化 VitePress 容器的移动端间距 */
+  /* 优化 VitePress 容器的移动端间距 - 使用最小边距 */
   .VPLayout,
   .VPContent,
   .VPDoc,
   main,
   .container,
   .VPPage,
-  .VPLayout .container {
-    padding-left: 0.75rem !important; /* 减少左右边距 */
-    padding-right: 0.75rem !important;
+  .VPLayout .container,
+  #app {
+    padding-left: 0.5rem !important; /* 大幅减少左右边距 */
+    padding-right: 0.5rem !important;
     max-width: 100% !important;
     width: 100% !important;
     box-sizing: border-box;
+    margin: 0 !important;
   }
 
   /* 优化段落和文字在移动端的显示 */
@@ -564,19 +566,22 @@ h2, h3, h4, h5, h6 {
 
   /* Landing Page 移动端优化 */
   .sa-landing-page {
-    padding: 2rem 1rem !important; /* 减少左右边距 */
-    gap: 3rem;
+    padding: 1.5rem 0.5rem !important; /* 大幅减少左右边距 */
+    gap: 2.5rem;
   }
 
   .sa-nav-cards {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.2rem;
     padding: 0;
+    width: 100%;
   }
 
   .sa-nav-card {
-    padding: 1.5rem !important; /* 减少卡片内边距 */
+    padding: 1.2rem 1rem !important; /* 减少卡片内边距 */
     margin: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* 优化按钮在移动端的显示 */
@@ -597,17 +602,27 @@ h2, h3, h4, h5, h6 {
   .VPContent,
   .VPDoc,
   main,
-  .container {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+  .container,
+  #app {
+    padding-left: 0.4rem !important; /* 超小屏幕使用更小边距 */
+    padding-right: 0.4rem !important;
   }
 
   .sa-landing-page {
-    padding: 1.5rem 0.75rem !important;
+    padding: 1rem 0.4rem !important;
   }
 
   .sa-nav-card {
-    padding: 1.25rem !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  /* 所有组件在超小屏幕使用最小边距 */
+  .sa-chat-shell,
+  .sa-atelier-form-panel,
+  .sa-atelier-display-panel,
+  .sa-lab-content-direct {
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
   }
 }
 

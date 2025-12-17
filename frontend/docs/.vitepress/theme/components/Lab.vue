@@ -1438,10 +1438,10 @@ const handleCreateWithLeNez = () => {
     width: 100% !important;
     max-width: none !important; /* 强制解除宽度限制 */
     min-height: 100vh; /* 占满整个视口 */
-    padding-top: 3px !important; /* 移动端几乎贴近顶部 */
-    padding-left: 0.75rem !important; /* 减少左侧间距 */
-    padding-right: 0.75rem !important; /* 减少右侧间距 */
-    padding-bottom: 5vh;
+    padding-top: 0.5rem !important; /* 最小化顶部间距 */
+    padding-left: 0.5rem !important; /* 大幅减少左侧间距 */
+    padding-right: 0.5rem !important; /* 大幅减少右侧间距 */
+    padding-bottom: 3vh;
   }
   
   .sa-lab-content-direct--has-data {
@@ -1463,16 +1463,30 @@ const handleCreateWithLeNez = () => {
   .sa-lab-search-form {
     width: 100% !important;
     max-width: none !important; /* 强制解除宽度限制 */
-    padding: 0 0.5rem;
+    padding: 0 !important; /* 完全移除内边距 */
+    margin: 0;
+  }
+  
+  .sa-lab-search-field {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0;
   }
   
   .sa-lab-search-input {
     width: 100% !important;
     max-width: none !important; /* 强制解除宽度限制 */
-    height: 56px !important;
+    height: 52px !important;
     font-size: 15px !important; /* 固定字体大小，避免过小 */
     font-weight: 400 !important;
     line-height: 1.6 !important;
+    padding: 0 1rem !important; /* 只在输入框内部留边距 */
+    border-radius: 8px !important;
+  }
+
+  .sa-lab-search-btn {
+    width: 100% !important;
+    margin-top: 0.5rem;
   }
   
   .sa-lab-search-field {
@@ -1491,10 +1505,9 @@ const handleCreateWithLeNez = () => {
   .sa-lab-results-grid {
     grid-template-columns: 1fr !important; /* 单列布局 */
     width: 100% !important;
-    gap: 15px !important; /* 移动端进一步减小间距 */
-    padding-bottom: 30px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    gap: 12px !important; /* 进一步减小间距 */
+    padding: 0 !important; /* 完全移除内边距 */
+    margin: 0;
   }
   
   .sa-lab-radar-card,
@@ -1502,7 +1515,9 @@ const handleCreateWithLeNez = () => {
   .sa-lab-data-card {
     width: 100% !important;
     height: auto !important; /* 移动端允许高度自适应 */
-    padding: 1.2rem 1rem !important; /* 减少卡片内边距 */
+    padding: 1rem 0.75rem !important; /* 大幅减少卡片内边距 */
+    margin: 0 !important;
+    border-radius: 8px !important;
   }
   
   .sa-lab-card-content {
