@@ -19,6 +19,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@theme": path.resolve(__dirname, "theme"),
+        "@": path.resolve(__dirname, "../../../.."),
       },
     },
     server: {

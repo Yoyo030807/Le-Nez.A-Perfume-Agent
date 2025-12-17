@@ -345,6 +345,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUpdated, nextTick } from "vue";
+import { API_BASE_URL } from '../../../../config';
 
 type Locale = "zh" | "en";
 
@@ -535,7 +536,7 @@ const forceDarkModeStyles = () => {
 const extractRecipe = async (text: string) => {
   extracting.value = true;
   try {
-    const response = await fetch("http://localhost:8001/api/extract_recipe", {
+    const response = await fetch(`${API_BASE_URL}/api/extract_recipe`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -570,7 +571,7 @@ const loadConversations = async () => {
   loadingConversations.value = true;
   try {
     const response = await fetch(
-      `http://localhost:8001/api/conversations?locale=${locale.value}`
+      `${API_BASE_URL}/api/conversations?locale=${locale.value}`
     );
     if (!response.ok) return;
     const data = await response.json();
@@ -588,7 +589,7 @@ const handleImportConversation = async (conversationId: string) => {
   extracting.value = true;
   try {
     const response = await fetch(
-      `http://localhost:8001/api/conversations/${encodeURIComponent(conversationId)}?locale=${locale.value}`
+      `${API_BASE_URL}/api/conversations/${encodeURIComponent(conversationId)}?locale=${locale.value}`
     );
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
@@ -672,7 +673,7 @@ const loadRecipes = async () => {
   loadingRecipes.value = true;
   try {
     const response = await fetch(
-      `http://localhost:8001/api/recipes?locale=${locale.value}`
+      `${API_BASE_URL}/api/recipes?locale=${locale.value}`
     );
     if (!response.ok) return;
     const data = await response.json();
@@ -699,7 +700,7 @@ const selectRecipe = async (recipeId: string) => {
   selectedRecipeId.value = recipeId;
   try {
     const response = await fetch(
-      `http://localhost:8001/api/recipes/${encodeURIComponent(recipeId)}`
+      `${API_BASE_URL}/api/recipes/${encodeURIComponent(recipeId)}`
     );
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
@@ -786,7 +787,7 @@ const handleGenerate = async () => {
   perfumeNotes.value = null;
 
   try {
-    const response = await fetch("http://localhost:8001/api/draw_bottle", {
+    const response = await fetch(`${API_BASE_URL}/api/draw_bottle`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

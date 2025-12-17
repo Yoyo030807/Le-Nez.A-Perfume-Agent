@@ -316,6 +316,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import MarkdownIt from "markdown-it";
+import { API_BASE_URL } from '../../../../config';
 
 type Role = "user" | "assistant";
 type Locale = "zh" | "en";
@@ -415,7 +416,7 @@ const generateConversationId = () =>
 const loadConversations = async () => {
   try {
     const response = await fetch(
-      `http://localhost:8001/api/conversations?locale=${locale.value}`
+      `${API_BASE_URL}/api/conversations?locale=${locale.value}`
     );
     if (!response.ok) return;
     const data: ConversationSummary[] = await response.json();
@@ -428,7 +429,7 @@ const loadConversations = async () => {
 const loadConversationDetail = async (id: string) => {
   try {
     const response = await fetch(
-      `http://localhost:8001/api/conversations/${encodeURIComponent(id)}?locale=${locale.value}`,
+      `${API_BASE_URL}/api/conversations/${encodeURIComponent(id)}?locale=${locale.value}`,
     );
     if (!response.ok) return;
     const data: { 
@@ -702,7 +703,7 @@ const handleSubmit = async () => {
 
   loading.value = true;
   try {
-    const response = await fetch("http://localhost:8001/api/chat", {
+    const response = await fetch(`${API_BASE_URL}/api/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

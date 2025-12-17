@@ -308,6 +308,7 @@
 
 <script setup lang="ts">
 import { ref, computed, defineComponent, h, onMounted, shallowRef, markRaw } from "vue";
+import { API_BASE_URL } from '../../../../config';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -610,7 +611,7 @@ const handleAnalyze = async () => {
   selectedHistoryId.value = null;
   
   try {
-    const response = await fetch("http://localhost:8001/api/analyze_scent", {
+    const response = await fetch(`${API_BASE_URL}/api/analyze_scent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

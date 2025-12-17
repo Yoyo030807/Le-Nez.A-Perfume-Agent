@@ -398,15 +398,10 @@ Conversation with {user_name}. {user_messages[0][:50] if user_messages else "...
 
 Noted in journal."""
 
-# CORS 设置：前端本地开发使用 5174 端口
+# CORS 设置：允许所有来源，确保前端上线后可以连接后端
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5174",
-        "http://127.0.0.1:5174",
-        "http://localhost:5173",  # 保留旧端口兼容
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=["*"],  # 允许所有来源
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
