@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+openai
+pydantic
+httpx
+requests
+pytz
+tavily-python
+duckduckgo-search

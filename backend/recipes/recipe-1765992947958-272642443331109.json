@@ -1,0 +1,15 @@
+{
+  "id": "recipe-1765992947958-272642443331109",
+  "name": "檀影禅境",
+  "keywords": "木质禅意, 寺庙光影, 烟雾缭绕, 静谧庭院, 古书墨香",
+  "description": "檐角风铃轻摇古刹光影，青烟缠绕沉香流过蒲团。",
+  "image_url": "http://qianfan-modelbuilder-img-gen.bj.bcebos.com/flux.1-schnell/d4f5556e7f8f4189ba298045c6fe0b81/d4f5556e7f8f4189ba298045c6fe0b81/img-d9927eb8-d9ce-44e7-7449-3f62190bc566.jpeg?authorization=bce-auth-v1%2FALTAKEDe5Wum0DnGzeUzScVC94%2F2025-12-17T17%3A35%3A44Z%2F86400%2Fhost%2F64e1da9d7dc9f268400456a3296edfd5622c9c35688dcbb3a87b59d885885cca",
+  "created_at": "2025-12-18T01:35:47.958805",
+  "locale": "zh",
+  "notes": {
+    "has_notes": true,
+    "top": "柠檬, 橙花",
+    "middle": "檀木, 雪松, 乳香",
+    "base": "麝香, 琥珀, 香根草"
+  }
+}

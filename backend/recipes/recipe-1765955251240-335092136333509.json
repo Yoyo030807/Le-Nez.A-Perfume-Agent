@@ -1,0 +1,15 @@
+{
+  "id": "recipe-1765955251240-335092136333509",
+  "name": "若即若离",
+  "keywords": "潮湿柏油路, 旧书页灰尘, 电影感光线, 矛盾平衡, 微妙距离",
+  "description": "雨后柏油路蒸腾的潮气，纠缠着旧书页簌簌抖落的细尘，在暖黄光晕里拉扯出暧昧的边界。",
+  "image_url": "http://qianfan-modelbuilder-img-gen.bj.bcebos.com/flux.1-schnell/d4f5556e7f8f4189ba298045c6fe0b81/d4f5556e7f8f4189ba298045c6fe0b81/img-06bc7765-567c-439c-6638-d9bfaa69b694.jpeg?authorization=bce-auth-v1%2F50c8bb753dcb4e1d8646bb1ffefd3503%2F2025-12-17T07%3A07%3A23Z%2F86400%2Fhost%2Fdc5c84a988cc5f59c016ffe1f98263e348d17be0abaaa0a2c54539caa9d34875",
+  "created_at": "2025-12-17T15:07:31.240564",
+  "locale": "zh",
+  "notes": {
+    "has_notes": true,
+    "top": "柏油, 湿石, 臭氧",
+    "middle": "旧纸张, 灰尘, 紫罗兰叶",
+    "base": "白麝香, 琥珀, 雪松木"
+  }
+}

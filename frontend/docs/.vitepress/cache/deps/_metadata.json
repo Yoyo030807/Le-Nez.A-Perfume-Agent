@@ -1,0 +1,55 @@
+{
+  "hash": "4deb6a3f",
+  "configHash": "a811e82e",
+  "lockfileHash": "9324d1f2",
+  "browserHash": "03b626a5",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "7c6d136b",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "474c621f",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "97bebcb5",
+      "needsInterop": false
+    },
+    "chart.js": {
+      "src": "../../../../node_modules/chart.js/dist/chart.js",
+      "file": "chart__js.js",
+      "fileHash": "01d6a27d",
+      "needsInterop": false
+    },
+    "vue-chartjs": {
+      "src": "../../../../node_modules/vue-chartjs/dist/index.js",
+      "file": "vue-chartjs.js",
+      "fileHash": "286a4c2c",
+      "needsInterop": false
+    },
+    "markdown-it": {
+      "src": "../../../../node_modules/markdown-it/index.mjs",
+      "file": "markdown-it.js",
+      "fileHash": "450cc606",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-EKBJ2FPM": {
+      "file": "chunk-EKBJ2FPM.js"
+    },
+    "chunk-4YKXGFUS": {
+      "file": "chunk-4YKXGFUS.js"
+    },
+    "chunk-UVKRO5ER": {
+      "file": "chunk-UVKRO5ER.js"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# --- 忽略系统垃圾 ---
+.DS_Store
+Thumbs.db
+
+# --- 忽略依赖包 (太大了，不需要上传) ---
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+
+# --- 忽略敏感配置 (绝对不能上传！！！) ---
+.env
+.env.local
+
+# --- 其他 ---
+dist/
+build/
