@@ -1750,21 +1750,53 @@ html.dark textarea[data-dark-placeholder]:-ms-input-placeholder {
 
 @media (max-width: 768px) {
   .sa-atelier-root {
-    padding: 1.5rem 0;
+    padding: 1rem 0 !important; /* 减少顶部和底部间距 */
   }
 
   .sa-atelier-container {
-    padding: 0 1rem;
-    gap: 1.5rem;
+    padding: 0 0.75rem !important; /* 减少左右边距 */
+    gap: 1.2rem;
   }
 
   .sa-atelier-form-panel,
   .sa-atelier-display-panel {
-    padding: 1.6rem 1.4rem 1.4rem;
+    padding: 1.2rem 1rem !important; /* 减少内边距 */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .sa-atelier-frame {
     min-height: 300px;
+  }
+
+  /* 优化文字显示 */
+  .sa-atelier-title {
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+  }
+
+  .sa-atelier-subtitle {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  .sa-atelier-label {
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
+  }
+
+  .sa-atelier-input,
+  .sa-atelier-textarea {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .sa-atelier-hint {
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
   }
 }
 </style>

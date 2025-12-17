@@ -1234,14 +1234,26 @@ const handleSubmit = async () => {
 }
 
 @media (max-width: 768px) {
+  .sa-chat-root {
+    padding: 1rem 0 !important; /* 减少顶部和底部间距 */
+  }
+
   .sa-chat-shell {
-    margin-inline: -0.4rem;
+    margin-inline: 0 !important; /* 移除负边距，使用全宽 */
     border-radius: 0;
+    padding: 1.2rem 1rem !important; /* 减少内边距 */
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .sa-main-wrapper {
+    padding: 0 !important; /* 移除左右边距 */
   }
 
   .sa-chat-header {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 1rem;
   }
 
   .sa-chat-controls {
@@ -1255,6 +1267,8 @@ const handleSubmit = async () => {
 
   .sa-chat-hint {
     order: 2;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   .sa-chat-submit {
@@ -1264,6 +1278,29 @@ const handleSubmit = async () => {
 
   .sa-chat-content-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  /* 优化文字显示 */
+  .sa-chat-entry-text {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+  }
+
+  .sa-chat-input {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+  }
+
+  /* 优化标题 */
+  .sa-chat-title {
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+  }
+
+  .sa-chat-subtitle {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
   }
 }
 

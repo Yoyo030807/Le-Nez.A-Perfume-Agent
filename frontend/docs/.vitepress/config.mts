@@ -6,6 +6,15 @@ export default defineConfig({
   title: "Scent Alchemist | 气味炼金术士",
   description: "A minimalist, high-end scent & tech journal. 极简高端的气味与技术手记。",
   lastUpdated: true,
+  head: [
+    [
+      "meta",
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes",
+      },
+    ],
+  ],
   themeConfig: {
     logo: "/favicon.svg",
     nav: [

@@ -1439,8 +1439,8 @@ const handleCreateWithLeNez = () => {
     max-width: none !important; /* 强制解除宽度限制 */
     min-height: 100vh; /* 占满整个视口 */
     padding-top: 3px !important; /* 移动端几乎贴近顶部 */
-    padding-left: 1rem !important; /* 左侧间距 */
-    padding-right: 1rem !important; /* 右侧间距 */
+    padding-left: 0.75rem !important; /* 减少左侧间距 */
+    padding-right: 0.75rem !important; /* 减少右侧间距 */
     padding-bottom: 5vh;
   }
   
@@ -1463,14 +1463,16 @@ const handleCreateWithLeNez = () => {
   .sa-lab-search-form {
     width: 100% !important;
     max-width: none !important; /* 强制解除宽度限制 */
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   
   .sa-lab-search-input {
     width: 100% !important;
     max-width: none !important; /* 强制解除宽度限制 */
     height: 56px !important;
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important; /* 与副标题字体大小一致 */
+    font-size: 15px !important; /* 固定字体大小，避免过小 */
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
   }
   
   .sa-lab-search-field {
@@ -1491,6 +1493,8 @@ const handleCreateWithLeNez = () => {
     width: 100% !important;
     gap: 15px !important; /* 移动端进一步减小间距 */
     padding-bottom: 30px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   
   .sa-lab-radar-card,
@@ -1498,10 +1502,39 @@ const handleCreateWithLeNez = () => {
   .sa-lab-data-card {
     width: 100% !important;
     height: auto !important; /* 移动端允许高度自适应 */
+    padding: 1.2rem 1rem !important; /* 减少卡片内边距 */
   }
   
   .sa-lab-card-content {
     max-height: 400px;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+  }
+
+  /* 优化标题和文字 */
+  .sa-lab-title {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+  }
+
+  .sa-lab-subtitle {
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+  }
+
+  .sa-lab-card-title {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+  }
+
+  .sa-lab-info-item,
+  .sa-lab-note-row {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
   }
 }
 
