@@ -1,7 +1,7 @@
 # Scent Alchemist | 气味炼金术士
 
-> A minimalist, high-end scent & tech journal.  
-> 极简高端的气味与技术手记。
+> A minimalist, high-end scent & tech journal.  playable website: https://scentalchemist.netlify.app/
+> 极简高端的气味与技术手记。游玩网址：https://scentalchemist.netlify.app/ （电脑端可以，移动端排版还没修正）
 
 ---
 
