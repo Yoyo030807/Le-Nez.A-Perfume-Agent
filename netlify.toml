@@ -1,0 +1,8 @@
+[build]
+  # 告诉 Netlify 先进入 frontend 目录
+  base = "frontend"
+  # 在 frontend 目录下，构建生成的文件实际在这里
+  publish = "docs/.vitepress/dist"
+  # 构建命令
+  command = "npm run build"
+
