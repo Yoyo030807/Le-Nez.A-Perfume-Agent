@@ -1234,17 +1234,27 @@ const handleSubmit = async () => {
 }
 
 @media (max-width: 768px) {
+  /* 移除所有背景设计，极简排版 */
   .sa-chat-root {
-    padding: 0.5rem 0 !important; /* 最小化顶部和底部间距 */
+    padding: 0 !important;
+    background: transparent !important;
   }
 
   .sa-chat-shell {
-    margin-inline: 0 !important; /* 移除负边距，使用全宽 */
+    margin-inline: 0 !important;
     border-radius: 0 !important;
-    padding: 1rem 0.75rem !important; /* 大幅减少内边距 */
+    padding: 1rem 0.75rem !important;
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
+    background: transparent !important; /* 移除背景 */
+    border: none !important; /* 移除边框 */
+    box-shadow: none !important; /* 移除阴影 */
+  }
+
+  /* 移除 shell 的背景渐变 */
+  .sa-chat-shell::before {
+    display: none !important;
   }
 
   .sa-main-wrapper {
@@ -1306,6 +1316,20 @@ const handleSubmit = async () => {
     grid-template-columns: 1fr;
   }
 
+  /* 移除对话框背景，极简设计 */
+  .sa-chat-paper {
+    background: transparent !important; /* 移除所有渐变背景 */
+    border: none !important; /* 移除边框 */
+    border-radius: 0 !important;
+    padding: 0.5rem 0 !important; /* 最小化内边距 */
+    box-shadow: none !important;
+  }
+
+  /* 隐藏渐变层 */
+  .sa-chat-paper-gradient {
+    display: none !important;
+  }
+
   /* 优化文字显示 */
   .sa-chat-entry-text {
     font-size: 15px !important;
@@ -1314,8 +1338,11 @@ const handleSubmit = async () => {
   }
 
   .sa-chat-input-row {
-    padding: 0.4rem 0.5rem !important;
+    padding: 0.4rem 0 !important;
     margin: 0;
+    background: transparent !important; /* 移除背景 */
+    border: none !important; /* 移除边框 */
+    border-radius: 0 !important;
   }
 
   .sa-chat-input {
@@ -1337,7 +1364,53 @@ const handleSubmit = async () => {
     margin: 0.5rem 0 0 0;
   }
 
-  /* 优化手札面板 */
+  /* 移除 footer 边框，极简设计 */
+  .sa-chat-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important; /* 极细边框 */
+    padding-top: 0.8rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* 移除 header 的装饰 */
+  .sa-chat-header {
+    border-bottom: none !important;
+  }
+
+  /* 移除条目边框，极简设计 */
+  .sa-chat-entry {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important; /* 极细边框 */
+    padding-bottom: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .sa-chat-entry:last-child {
+    border-bottom: none !important;
+  }
+
+  /* 移除 meta 信息的装饰 */
+  .sa-chat-entry-meta {
+    opacity: 0.6; /* 降低视觉权重 */
+    font-size: 0.75rem !important;
+  }
+
+  /* 极简按钮样式 */
+  .sa-chat-submit {
+    background: #000000 !important; /* 纯黑按钮 */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .sa-chat-submit:hover {
+    background: #333333 !important;
+  }
+
+  .sa-chat-submit:disabled {
+    background: #cccccc !important;
+    color: #666666 !important;
+  }
+
+  /* 优化手札面板 - 移除背景 */
   .sa-memo-panel {
     flex: 1 1 100% !important;
     max-width: 100% !important;
@@ -1347,6 +1420,47 @@ const handleSubmit = async () => {
     margin: 0.5rem 0 0 0 !important;
     position: relative !important;
     top: 0 !important;
+    background: transparent !important; /* 移除背景 */
+    border: none !important; /* 移除边框 */
+    box-shadow: none !important; /* 移除阴影 */
+  }
+
+  .sa-memo-panel::before {
+    display: none !important; /* 移除背景渐变 */
+  }
+
+  /* 移除条目边框，极简设计 */
+  .sa-chat-entry {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important; /* 极细边框 */
+    padding-bottom: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .sa-chat-entry:last-child {
+    border-bottom: none !important;
+  }
+
+  /* 移除 meta 信息的装饰 */
+  .sa-chat-entry-meta {
+    opacity: 0.6; /* 降低视觉权重 */
+    font-size: 0.75rem !important;
+  }
+
+  /* 极简按钮样式 */
+  .sa-chat-submit {
+    background: #000000 !important; /* 纯黑按钮 */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .sa-chat-submit:hover {
+    background: #333333 !important;
+  }
+
+  .sa-chat-submit:disabled {
+    background: #cccccc !important;
+    color: #666666 !important;
   }
 }
 

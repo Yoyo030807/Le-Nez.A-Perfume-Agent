@@ -510,6 +510,7 @@ h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
     font-weight: 400; /* 确保正文使用正常字重 */
+    background: #ffffff !important; /* 移动端使用纯白背景，移除渐变 */
   }
 
   /* 优化 VitePress 容器的移动端间距 - 使用最小边距 */
